@@ -1,0 +1,12 @@
+{
+  "name": "loop-notifications-server",
+  "version": "1.0.0",
+  "description": "FCM Push Notifications Server for Loop app",
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
