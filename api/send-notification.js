@@ -67,15 +67,25 @@ module.exports = async (req, res) => {
       android: {
         priority: 'high',
         notification: {
-          sound: 'default',
-          channelId: 'loop_messages',
+          sound      : 'default',
+          channelId  : 'loop_messages',
+          priority   : 'high',
+          visibility : 'public',
+          // يضمن ظهور الإشعار حتى على الأجهزة القديمة
+          defaultSound      : true,
+          defaultVibrateTimings: true,
+          notificationPriority: 'PRIORITY_MAX',
         },
       },
       apns: {
+        headers: {
+          'apns-priority': '10',
+        },
         payload: {
           aps: {
             sound: 'default',
             badge: 1,
+            'content-available': 1,
           },
         },
       },
